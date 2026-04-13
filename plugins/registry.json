@@ -1,0 +1,7 @@
+{
+  "ai-gen": {
+    "url": "https://raw.githubusercontent.com/Ilyan-Margueritte/ProjectManagerCLI/main/ai_scaffolder.py",
+    "description": "Générateur de projets par IA (Kimi-k2.5)",
+    "version": "1.0.0"
+  }
+}

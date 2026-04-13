@@ -7,11 +7,11 @@ with open(os.path.join(os.path.dirname(__file__), "README.md"), encoding="utf-8"
 
 setup(
     name="projectmcli",
-    version="1.0.0",
-    description="Project Manager CLI",
+    version="1.5.0",
+    description="Project Manager CLI - Ultimate Developer Productivity Tool",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    author="Ilyan",
+    author="Ilyan Margueritte",
     packages=find_packages(),
     entry_points={
         "console_scripts": [
