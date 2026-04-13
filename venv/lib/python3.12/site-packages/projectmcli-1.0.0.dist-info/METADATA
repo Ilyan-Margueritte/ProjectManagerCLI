@@ -1,0 +1,42 @@
+Metadata-Version: 2.4
+Name: projectmcli
+Version: 1.0.0
+Summary: Project Manager CLI
+Author: Ilyan
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Dynamic: author
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: requires-python
+Dynamic: summary
+
+# PMCLI — Project Manager CLI
+
+PMCLI est un outil de ligne de commande simple et puissant pour gérer vos projets de développement localement.
+
+## Installation
+
+```bash
+pip install pmcli
+```
+
+## Fonctionnalités
+
+- 🚀 **Initialisation rapide** : Crée un projet et initialise Git automatiquement.
+- 📦 **Gestion des tâches** : Ajoutez, listez et terminez des tâches par projet.
+- 📊 **Suivi de progression** : Visualisez l'avancement avec des barres de progression.
+- 📂 **Accès rapide** : Ouvrez vos dossiers de projet en une commande.
+
+## Utilisation
+
+```bash
+pmcli init mon-projet
+pmcli add-task mon-projet "Coder l'API"
+pmcli list
+pmcli done mon-projet "Coder l'API"
+```
