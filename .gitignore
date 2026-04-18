@@ -10,3 +10,5 @@ old/
 .pytest_cache/
 .hypothesis/
 test_output.txt
+site_web/
+tests/
