@@ -6,3 +6,7 @@ dist/
 *.egg-info/
 .pmcli-app/
 pmcli_projects.json
+old/
+.pytest_cache/
+.hypothesis/
+test_output.txt

@@ -95,7 +95,11 @@ def _perform_install(src):
 
 def _remove_plugin(name):
     # ... (code de suppression existant)
-    path = os.path.join(USER_PLUGIN_DIR, name)
+    path = os.path.abspath(os.path.join(USER_PLUGIN_DIR, name))
+    if not path.startswith(os.path.abspath(USER_PLUGIN_DIR)):
+        formatter.print_error(f"Accès non autorisé : {name}")
+        return 1
+    
     if not os.path.exists(path):
         if not name.endswith(".py"): path += ".py"
     if not os.path.exists(path):

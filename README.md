@@ -1,6 +1,4 @@
-# PMCLI 🚀 — Ultimate Project Manager
-
-![PMCLI Banner](/home/ilyan/.gemini/antigravity/brain/6b8af278-7599-43d1-b12c-288ac9f91120/pmcli_banner_1776076746343.png)
+# PMCLI 🚀 — Project Manager
 
 **PMCLI** (Project Manager CLI) est un outil de productivité ultra-rapide conçu pour les développeurs qui vivent dans le terminal. Gérez vos projets, vos tâches et générez du code via l'IA en une seule ligne de commande.
 
@@ -13,22 +11,61 @@
 - **🤖 AI Scaffolding** : Générez des boilerplates complets (HTML/CSS/JS) en décrivant votre projet (via Ollama & Kimi).
 - **📦 Global Storage** : Vos projets sont suivis globalement dans `~/.pmcli/`.
 - **📊 Progress Tracking** : Visualisez l'avancement de vos tâches avec des barres de progression stylisées.
+- **🛡️ Security Hardened** : Protections natives contre les injections de commandes et le Path Traversal (v1.6.0+).
 
 ---
+
+## 🛡️ Sécurité & Robustesse
+
+La version **1.1.1** apporte des améliorations majeures de sécurité :
+- **Isolation des commandes** : Utilisation de `subprocess.run` pour empêcher les injections de scripts via les noms de projets.
+- **Validation des chemins** : Protection contre le *Path Traversal* lors de la manipulation des plugins.
+- **Gestion des erreurs** : Résistance aux entrées malformées (noms trop longs, octets nuls).
+
+### Lancer les tests de sécurité (Fuzzing)
+Pour vérifier la robustesse de votre installation :
+```bash
+# Installer les outils de test
+pip install -e ".[test]"
+
+# Lancer la batterie de tests Hypothesis
+pytest tests/test_security_hypothesis.py
+```
 
 ## 🛠️ Installation
 
 ### Via Pip (Recommandé)
+
 ```bash
-pip install projectmcli
+# Clonez le repo
+git clone https://github.com/Ilyan-Margueritte/ProjectManagerCLI.git
+cd ProjectManagerCLI
+
+# Installez
+pip install .
 ```
 
+> [!TIP]
+> **Sur Windows** : Si la commande `pmcli` n'est pas reconnue après l'installation, lancez une fois `./install.ps1` pour configurer automatiquement votre PATH Windows.
+
+
 ### Via l'installeur natif
+
+**Sur Linux / macOS :**
 ```bash
 git clone https://github.com/Ilyan-Margueritte/ProjectManagerCLI.git
 cd ProjectManagerCLI
 ./install.sh
 ```
+
+**Sur Windows :**
+1. Téléchargez le dossier ou clonez-le.
+2. Ouvrez un terminal (PowerShell ou CMD) dans le dossier.
+3. Exécutez :
+   - PowerShell : `./install.ps1`
+   - CMD : `setup.bat`
+   - *Ou faites simplement un clic droit sur `install.ps1` > "Exécuter avec PowerShell" ou double-cliquez sur `setup.bat`.*
+
 
 ---
 
@@ -41,7 +78,7 @@ PMCLI est totalement extensible. Vous pouvez installer des plugins depuis un fic
 pmcli plugin list
 
 # Installer le générateur IA (depuis le repo)
-pmcli plugin install ai_gen
+pmcli plugin install extensions/ai_gen
 
 # Supprimer une extension
 pmcli plugin remove ai_gen
@@ -51,7 +88,7 @@ pmcli plugin remove ai_gen
 
 ## 🤖 Utilisation de l'IA (Génération)
 
-Une fois le plugin `ai_scaffolder` installé, décrivez simplement votre projet :
+Une fois le plugin `ai-gen` installé, décrivez simplement votre projet :
 
 ```bash
 pmcli generate mon_site_web

@@ -16,13 +16,24 @@ def run(args: list[str]) -> int:
         return 1
 
     if not os.path.exists(name):
-        os.mkdir(name)
+        try:
+            os.mkdir(name)
+        except (OSError, ValueError) as e:
+            formatter.print_error(f"Impossible de créer le dossier '{name}': {e}")
+            return 1
 
     projects[name] = Project(name=name)
     save_projects(projects)
     
     formatter.print_success(f"Projet '{name}' initialisé (Base) 🚀")
-    os.system(f"cd {name} && git init > /dev/null 2>&1")
+    
+    # Cross-platform git init
+    import subprocess
+    try:
+        subprocess.run(["git", "init", name], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    except (OSError, ValueError):
+        # ValueError peut arriver si le nom contient des null bytes (\0)
+        pass
     return 0
 
 REGISTRY.register(CommandDef(

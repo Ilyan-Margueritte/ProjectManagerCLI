@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "projectmcli"
+version = "1.1.1"
+authors = [
+  { name="Ilyan Margueritte", email="contact@example.com" },
+]
+description = "Project Manager CLI - Ultimate Developer Productivity Tool"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/Ilyan-Margueritte/ProjectManagerCLI"
+"Bug Tracker" = "https://github.com/Ilyan-Margueritte/ProjectManagerCLI/issues"
+
+[project.scripts]
+pmcli = "pmcli.cli:main"
+
+[project.optional-dependencies]
+test = [
+    "pytest",
+    "hypothesis",
+]
+
+[tool.setuptools]
+packages = ["pmcli", "pmcli.commands", "pmcli.core", "pmcli.output", "pmcli.plugins", "pmcli.storage"]

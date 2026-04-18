@@ -1,6 +1,7 @@
 """Command to open a project directory."""
 
 import os
+import sys
 from pmcli.core.registry import REGISTRY, CommandDef
 from pmcli.output import formatter
 
@@ -9,8 +10,14 @@ def run(args: list[str]) -> int:
     name = args[0]
     
     if os.path.exists(name) and os.path.isdir(name):
-        # We assume Linux as per user context
-        os.system(f"xdg-open '{name}' 2>/dev/null &")
+        absolute_path = os.path.abspath(name)
+        if os.name == 'nt':  # Windows
+            os.startfile(absolute_path)
+        elif sys.platform == 'darwin':  # macOS
+            os.system(f'open "{absolute_path}"')
+        else:  # Linux/Unix
+            os.system(f'xdg-open "{absolute_path}" 2>/dev/null &')
+        
         formatter.print_success(f"Dossier '{name}' ouvert 📂")
         return 0
     else:

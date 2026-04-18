@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProjectManagerCLI - Gestion de Projets Simplifiée</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <span class="logo">PMC</span>
+                <span class="brand-text">ProjectManagerCLI</span>
+            </div>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="#features">Fonctionnalités</a></li>
+                <li><a href="#installation">Installation</a></li>
+                <li><a href="#usage">Usage</a></li>
+                <li><a href="https://github.com/Ilyan-Margueritte/ProjectManagerCLI" target="_blank" class="btn-github">GitHub</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Gérez vos projets<br><span class="gradient-text">comme un pro</span></h1>
+                <p class="hero-description">
+                    Un outil en ligne de commande puissant et intuitif pour créer, 
+                    organiser et maintenir vos projets de développement.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#installation" class="btn-primary">Commencer</a>
+                    <a href="https://github.com/Ilyan-Margueritte/ProjectManagerCLI" target="_blank" class="btn-secondary">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        Voir sur GitHub
+                    </a>
+                </div>
+            </div>
+            <div class="hero-terminal">
+                <div class="terminal">
+                    <div class="terminal-header">
+                        <div class="terminal-buttons">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div class="terminal-title">bash — pmcli</div>
+                    </div>
+                    <div class="terminal-body">
+                        <div class="line">
+                            <span class="prompt">$</span>
+                            <span class="command typing" data-text="pmcli init mon-projet"></span>
+                        </div>
+                        <div class="line output">
+                            <span class="success">✓</span> Projet créé avec succès
+                        </div>
+                        <div class="line output">
+                            <span class="info">→</span> Template: Node.js/TypeScript
+                        </div>
+                        <div class="line output">
+                            <span class="info">→</span> Dependencies installées
+                        </div>
+                        <div class="line">
+                            <span class="prompt">$</span>
+                            <span class="cursor">_</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">Fonctionnalités clés</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                    </div>
+                    <h3>Initialisation Rapide</h3>
+                    <p>Créez des projets à partir de templates préconfigurés en quelques secondes.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+                    </div>
+                    <h3>Gestion des Dépendances</h3>
+                    <p>Intégration automatique avec npm, yarn, pip, cargo et autres gestionnaires de paquets.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9M12 20V4M12 4H3M12 4l-4 4M12 4l4 4M3 20l4-4M3 20l4 4"/></svg>
+                    </div>
+                    <h3>Templates Personnalisables</h3>
+                    <p>Créez et partagez vos propres templates pour standardiser vos projets.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                    </div>
+                    <h3>Automatisation</h3>
+                    <p>Scripts de build, test et déploiement configurables pour chaque projet.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <h3>Collaboration</h3>
+                    <p>Synchronisation des configurations d'équipe et partage de templates.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                    </div>
+                    <h3>Outils Intégrés</h3>
+                    <p>Linters, formatters et hooks git préconfigurés selon vos standards.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="installation" class="installation">
+        <div class="container">
+            <h2 class="section-title">Installation</h2>
+            <div class="install-grid">
+                <div class="install-method">
+                    <h3>Via NPM</h3>
+                    <div class="code-block">
+                        <button class="copy-btn" data-clipboard="npm install -g projectmanager-cli">Copier</button>
+                        <code>npm install -g projectmanager-cli</code>
+                    </div>
+                </div>
+                <div class="install-method">
+                    <h3>Via Yarn</h3>
+                    <div class="code-block">
+                        <button class="copy-btn" data-clipboard="yarn global add projectmanager-cli">Copier</button>
+                        <code>yarn global add projectmanager-cli</code>
+                    </div>
+                </div>
+                <div class="install-method">
+                    <h3>Via Cargo (Rust)</h3>
+                    <div class="code-block">
+                        <button class="copy-btn" data-clipboard="cargo install projectmanager-cli">Copier</button>
+                        <code>cargo install projectmanager-cli</code>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="usage" class="usage">
+        <div class="container">
+            <h2 class="section-title">Comment l'utiliser</h2>
+            <div class="usage-content">
+                <div class="usage-nav">
+                    <button class="usage-tab active" data-tab="init">Initialisation</button>
+                    <button class="usage-tab" data-tab="template">Templates</button>
+                    <button class="usage-tab" data-tab="task">Tâches</button>
+                    <button class="usage-tab" data-tab="config">Configuration</button>
+                </div>
+                <div class="usage-panels">
+                    <div class="usage-panel active" id="init">
+                        <h3>Créer un nouveau projet</h3>
+                        <div class="code-block">
+                            <button class="copy-btn" data-clipboard="pmcli init mon-projet --template node-ts">Copier</button>
+                            <code><span class="comment"># Créer un projet avec un template spécifique</span>
+pmcli init mon-projet --template node-ts
+
+<span class="comment"># Ou interactivement</span>
+pmcli init</code>
+                        </div>
+                    </div>
+                    <div class="usage-panel" id="template">
+                        <h3>Gérer les templates</h3>
+                        <div class="code-block">
+                            <button class="copy-btn" data-clipboard="pmcli template list">Copier</button>
+                            <code><span class="comment"># Lister les templates disponibles</span>
+pmcli template list
+
+<span class="comment"># Ajouter un template personnalisé</span>
+pmcli template add ./mon-template --name custom-template</code>
+                        </div>
+                    </div>
+                    <div class="usage-panel" id="task">
+                        <h3>Exécuter des tâches</h3>
+                        <div class="code-block">
+                            <button class="copy-btn" data-clipboard="pmcli run build">Copier</button>
+                            <code><span class="comment"># Lancer une tâche définie dans pmcli.json</span>
+pmcli run build
+
+<span class="comment"># Ou lancer en mode watch</span>
+pmcli run dev --watch</code>
+                        </div>
+                    </div>
+                    <div class="usage-panel" id="config">
+                        <h3>Configuration</h3>
+                        <div class="code-block">
+                            <button class="copy-btn" data-clipboard='{"name": "mon-projet", "version": "1.0.0"}'>Copier</button>
+                            <code><span class="comment">// pmcli.json</span>
+{
+  "name": "mon-projet",
+  "version": "1.0.0",
+  "template": "node-ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest",
+    "dev": "nodemon src/index.ts"
+  }
+}</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo">PMC</span>
+                    <p>ProjectManagerCLI - Simplifiez votre workflow de développement.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="https://github.com/Ilyan-Margueritte/ProjectManagerCLI" target="_blank">GitHub</a>
+                    <a href="#">Documentation</a>
+                    <a href="#">Issues</a>
+                    <a href="#">Releases</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ProjectManagerCLI. Open source sous licence MIT.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
